@@ -32,9 +32,6 @@ body {
   font-family: 'Permanent Marker', cursive;
   color: #ffca1d;
   font-size: 70px;
-  padding-top: 1rem;
-  padding-bottom: 3rem;
-  
 }
 .featurette-heading{
   font-family: 'Staatliches', cursive;
@@ -59,4 +56,5 @@ body {
 .nav-link{
   font-family: 'Staatliches', cursive;
 }
+
 
