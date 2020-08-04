@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Checkout example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="css/form-validation.css" rel="stylesheet">
+    <!-- form validation core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@200;400&display=swap" rel="stylesheet">
+
+    <style>
+      body{
+        font-family: 'Sarabun', sans-serif;
+        color: black;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+ <!--ส่วนที่ 2-->
+ <div class="py-5 text-center">
+    <!--fa-10x ขนาด ไอคอน-->
+    
+    <i class="fas fa-paste fa-10x "  style="color: #7a0808; "></i></i>
+    <h2><b>ใบสั่งเจ้าพนักงานจราจรหรือพนักเจ้าหน้าที่</b></h2>
+    <p class="lead">Traffic Ticket issued by Tracffic Officers or Competent Officials</p>
+  </div>
+  <!-- <div class="row">-->
+    
+    <div class="container">  
+        <form class="needs-validation">
+            <h3><b>เลขที่ใบสั่ง  0000000000</b></h3><br/>
+            
+    <div class="container bord">
+      <div class="row">
+        <div class="col-md-8 mb-3 ">
+          <label for="name">
+              <h6>ชื่อผู้ขับขี่,เจ้าของหรือผู้ครอบครอง</h6>
+              <h6>Driver's name, conveyance owner or possessor's name : </h6>
+          </label>
+          <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล" required></div>
+      </div><br/>
+
+      <h6>ที่อยู่ / Address : </h6>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="province">จังหวัด  / Province :</label>
+          <select id="province" class="form-control" required>
+            <option>- กรุณาเลือกจังหวัด -</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="amphur">อำเภอ/เขต / District :</label>
+          <select id="amphur" class="form-control" required>
+            <option>- กรุณาเลือกอำเภอ -</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="district">ตำบล/แขวง / Sub-district :</label>
+          <select id="district" class="form-control" required>
+            <option>- กรุณาเลือกตำบล -</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="road">ถนน / Road :</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="road" placeholder="ถนน">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="soi">ตรอก/ซอย / Incident Alley :</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="soi" placeholder="ตรอก/ซอย">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="post">รหัสไปรษณีย์ / Postal code :</label>
+          <div class="input-group">
+            <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00000" name="reg_id_card" id="post"
+              size="25" value="" class="inputbox autowidth form-control" onKeyup="Post(this)" minlength="13"
+              maxlength="20" />
+          </div>
+        </div>
+      </div>
+
+      <hr class=" mb-4">
+
+      <div class="row">
+        <div class="col-md-12">
+            <label for="kohra"><b>ข้อหา</b></label>
+            <input type="text" id="kohra" class="form-control" placeholder="กรุณาใส่ข้อความ" required>
+        <br></div>
+        <div class="col-md-12">
+            <label for="charge"><b>Charge</b></label>
+            <input type="text" id="kohra" class="form-control" placeholder="Please enter a message." required>
+        <br></div>
+
+        <div class="col-md-6 ">
+          ความเร็วตามที่กฎหมายกำหนด <input type="text" id="zip" class="c" onKeyPress="CheckNum()"
+            placeholder=" km/hr " required> กม./ชม. </div>
+        <div class="col-md-6 py-1">
+          ความเร็วที่ตรวจจับ <input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr "
+            required> กม./ชม. </div>
+        <div class="col-md-6 py-1">
+          ช่องทางเดินรถที่ <input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr "
+            required> </div>
+        <div class="col-md-6 py-1">
+          หมายเลขทะเบียนรถ <input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr "
+            required></div>
+
+        <div class="col-md-6 ">
+          Speed limit enforcement <input type="text" id="zip" class="c" onKeyPress="CheckNum()"
+            placeholder=" km/hr " required> KMH </div>
+        <div class="col-md-6 py-1">
+          Vechicle speed detection <input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr "
+            required> KHM </div>
+        <div class="col-md-6 py-1">
+          Vehicle lane <input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr "
+            required> </div>
+        <div class="col-md-6 py-1">
+          Vehicle registration no. <input type="text" id="zip" class="c" onKeyPress="CheckNum()" placeholder=" km/hr "
+            required></div>
+      </div>
+      <hr class=" mb-4">
+      <div>
+        &emsp;&emsp;อาศัยอำนาจตามความในมาตรา 140 วรรค หนึ่ง แห่ง พ.ร.บ.จราจรทางบก พ.ศ.2522
+        ซึ่งแก้ไขเพิ่มเติมโดย
+        พ.ร.บ.จราจรทางบก(ฉบับที่ 9) พ.ศ.2557 และมาตรา 141 แห่ง พ.ร.บ.จราจรทางบก พ.ศ.2552 ซึ่งแก้ไข
+        เพิ่มเติมโดย พ.ร.บ.จราจรทางบก(ฉบับที่ 11) พ.ศ.2559 ให้ผู้ขับขี่หรือเจ้าของรถหรือผู้ครอบครองรถ
+        ไปชำระค่าปรับ <b>ข้อกำหนดสำนักงานตำรวจแห่งชาติ</b> ต่อพนักงานสอบสวน
+        หรือชำระด้วยวิธีอื่นใดตามที่ระบุไว้<br>
+        &emsp;&emsp;By virtue of Section 140 paragraph one of the Road Traffic Act 1979, as amended 
+        by The Road Traffic Act (No. 9) 2014 and Section 141 of the Road Traffic Act 2009, as amended 
+        by the Road Traffic Act (Issue 11) B.E. 2559 for the driver or car owner or car occupant To pay 
+        the fine National Police Agency Regulations To the inquiry official Or pay by any other method as specified.<br><br/>
+        <h6 align = "center"><b><u>(โปรดอ่านคำเตือนและวิธีการชำระค่าปรับ)</u></b></h6>
+        <h6 align = "center"><b><u>(Please read the warning on how to pay the fine.)</u></h6></b>
+      </div>
+
+      <hr class=" mb-4" >
+      <div>
+        <h5><b><u>ผู้ออกใบสั่ง</u></b></h5>
+        <h5><b>Traffic Ticket Issuing Officer</b></h5>
+        <div class="row">
+          <div class="col-md-6 mb-3 ">
+            <label for="name">ชื่อ / Name : </label>
+            <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล" required></div>
+          <div class="col-md-6 mb-3 ">
+            <label for="code">รหัส / Code : </label>
+            <input type="text" id="code" class="form-control" placeholder="รหัส" onKeyPress="CheckNum()" required>
+          </div>
+        </div>
+      </div>
+
+      <hr class=" mb-4">
+      <div class="row">
+        <div class="col-md-12 mb-3 ">
+          <label for="bai">
+              <h5><b><u>หน่วยงานผู้ออกใบสั่ง</u></b></h5>
+              <h5><b>Traffic Ticket Issuing Unit</b></h5>
+            </label>
+          
+            
+            <h6>ที่อยู่ / Address :</h6>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="province">จังหวัด / Province :</label>
+                <select id="province" class="form-control" required>
+                  <option>- กรุณาเลือกจังหวัด -</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="amphur">อำเภอ/เขต / District :</label>
+                <select id="amphur" class="form-control" required>
+                  <option>- กรุณาเลือกอำเภอ -</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="district">ตำบล/แขวง / Sub-district :</label>
+                <select id="district" class="form-control" required>
+                  <option>- กรุณาเลือกตำบล -</option>
+                </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="road">ถนน / Road :</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="road" placeholder="ถนน">
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="soi">ตรอก/ซอย / Incident Alley :</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="soi" placeholder="ตรอก/ซอย">
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="post">รหัสไปรษณีย์ / Postal code :</label>
+                <div class="input-group">
+                  <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00000" name="reg_id_card" id="post"
+                    size="25" value="" class="inputbox autowidth form-control" onkeyup="Post(this)" minlength="13"
+                    maxlength="20" />
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-4 mb-3">
+              <label for="tel">โทร / Tel :</label>
+              <div class="input-group">
+                <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00-0000-0000" name="reg_id_card"
+                  id="tel" size="25" value="" class="inputbox autowidth form-control" onkeyup="Tel(this)" minlength="13"
+                  maxlength="20" />
+              </div>
+            </div>
+      <hr class=" mb-4">
+      <!--ผู้รับ-->
+      
+      <div class="row">
+        <div class="col-md-12 mb-3 ">
+          <label for="name">
+              <h5><b><u>ผู้รับ</u></b></h5>
+              <h5><b>Recipient</b></h5>
+          </label>
+          <h6>ชื่อ / Name :</h6>
+          <input type="text" id="name" class="form-control" placeholder="ชื่อ-นามสกุล" required>
+        </div>
+      </div>
+      <h6>ที่อยู่ผู้รับ / Address :</h6>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="province">จังหวัด / Province :</label>
+          <select id="province" class="form-control" required>
+            <option>- กรุณาเลือกจังหวัด -</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="amphur">อำเภอ/เขต / District :</label>
+          <select id="amphur" class="form-control" required>
+            <option>- กรุณาเลือกอำเภอ -</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="district">ตำบล/แขวง / Sub-district :</label>
+          <select id="district" class="form-control" required>
+            <option>- กรุณาเลือกตำบล -</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="road">ถนน / Road :</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="road" placeholder="ถนน">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="soi">ตรอก/ซอย / Incident Alley :</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="soi" placeholder="ตรอก/ซอย">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="post">รหัสไปรษณีย์ / Postal code :</label>
+          <div class="input-group">
+            <input type="text" tabindex="1" onKeyPress="CheckNum()" placeholder="00000" name="reg_id_card" id="post"
+              size="25" value="" class="inputbox autowidth form-control" onKeypress="Post(this)" minlength="13"
+              maxlength="20" required />
+          </div>
+        </div>
+      </div>
+
+
+      <hr class=" mb-4">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="num">
+              <h6>เลขที่ใบสั่ง</h6>
+              <h6>Traffic tiket no. :</h6>
+          </label>
+          <input type="text" id="num" class="form-control" placeholder="เลขที่ใบสั่ง" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="date1">
+            <h6>วันเวลาที่กระทำผิด</h6>
+            <h6>Date of committing offences :</h6>
+          </label>
+          <input type="datetime-local" id="date1" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="total">
+            <h6>จำนวนค่าปรับ</h6>
+            <h6>Amount of fine :</h6>
+          </label>
+          <input type="text" id="total" class="form-control" onKeypress="CheckNum()" placeholder="ราคา" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="duedate">
+            <h6>วันครบกำหนดชำระ</h6>
+            <h6>Due date :</h6>
+          </label>
+          <input type="date" id="duedate" class="form-control" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="p">
+            <h6>คะแนนที่ถูกบันทึกเดิม</h6>
+            <h6>Former demerit point :</h6>
+          </label>
+          <input type="text" id="p" class="form-control" placeholder="คะแนน" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="pd">
+            <h6>คะแนนที่ถูกบันทึกครั้งนี้</h6>
+            <h6>Current demerit point :</h6>
+          </label>
+          <input type="text" id="pd" class="form-control" placeholder="คะแนน" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="pt">
+            <h6>คะแนนที่ถูกบันทึกรวม</h6>
+            <h6>Total demerit point :</h6>
+          </label>
+          <input type="text" id="pt" class="form-control" placeholder="คะแนน" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="sa">
+            <h6>สถานะใบขับขี่</h6>
+            <h6>Status of driver's license :</h6>
+          </label>
+          <input type="text" id="sa" class="form-control" placeholder="สถานะใบขับขี่" required>
+        </div>
+      </div>
+
+      <hr class="mb-4">
+
+      <!--ส่วนที่ 3-->
+      <div class="py-5 text-center">
+        <!--fa-10x ขนาด ไอคอน-->
+        <i class="fas fa-photo-video fa-10x" style="color: #7a0808;"></i>
+        <h2><b>พยานหลักฐาน</b></h2>
+        <p class="lead">Evidence</p>
+      </div>
+
+      <div class="form-group">
+        <label for="file">
+          <h5>พยานหลักฐาน</h5>
+        </label>
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile02" required>
+            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose
+              file</label>
+          </div>
+          <div class="input-group-append">
+            <span class="btn btn-primary input-group-text" id="inputGroupFileAddon02">Upload</span>
+          </div>
+        </div>
+      </div>
+      <hr class="mb-4">
+      
+    </div>
+    <body>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj "
+      crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js "
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo "
+      crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js "
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI "
+      crossorigin="anonymous "></script>
+      <script type="text/javascript" src="/public/js/form-validation.js"></script>
+  
+    <!--จังหวัด-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/public/AutoProvince.js"></script>
+    <script type="text/javascript" src="autoTab.js"></script>
+  
+    <script>
+      $('body').AutoProvince({
+        PROVINCE: '#province', //  select สำหรับรายชื่อจังหวัด
+        AMPHUR: '#amphur', //  select สำหรับรายชื่ออำเภอ
+        DISTRICT: '#district', //  select สำหรับรายชื่อตำบล
+        POSTCODE: '#postcode', //  input field สำหรับรายชื่อรหัสไปรษณีย์
+        GEOGRAPHY: '#geography', // input field แสดงภาค
+        arrangeByName: false // กำหนดให้เรียงตามตัวอักษร ลำดับจังหวัด
+      });
+    </script>
+  </body>
+  
+  </html>
